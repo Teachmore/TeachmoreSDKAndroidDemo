@@ -8,7 +8,6 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +16,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        button_launch_teachmore_in_separate_activity.setOnClickListener { view ->
+        button_launch_teachmore_sdk_full_activity.setOnClickListener { view ->
             val intent = Intent(this, `in`.teachmore.androidsdk.activities.HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        button_launch_teachmore_sdk_bottom_nav_activity.setOnClickListener { v ->
+            val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
         }
     }
