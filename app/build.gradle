@@ -9,11 +9,12 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "in.teachmore.sdk.android.demo"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -33,4 +34,70 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    // Add the Teachmore Android SDK AAR
+    api project(':teachmoreandroidsdk-release')
+
+    // TM_NOTE: These are extra libraries required to run Teachmore SDK v0.0.1
+    // These libraries won't be required here in the v1.0.0
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.legacy:legacy-support-core-utils:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.palette:palette:1.0.0"
+    implementation "androidx.leanback:leanback:1.0.0"
+
+    // Google Play Services for analytics, auth and logging
+    implementation "com.google.android.gms:play-services-analytics:16.0.8"
+    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation "com.google.android.gms:play-services-gcm:16.1.0"
+
+    // Firebase Messaging for push notifications
+    // Firebase Crashlytics for crash reporting
+    implementation "com.google.firebase:firebase-core:16.0.9"
+    implementation "com.google.firebase:firebase-messaging:18.0.0"
+    implementation "com.crashlytics.sdk.android:crashlytics:2.10.1"
+
+    // Retrofit, OkHttp3 and Gson for networking
+    implementation "com.squareup.retrofit:retrofit:1.7.1"
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.5.0"
+    implementation "com.squareup.okhttp3:okhttp:4.1.1"
+    implementation "com.google.code.gson:gson:2.8.5"
+
+    // Amazon AWS for Core utilities, S3 Storage, DynamoDB, DynamoDB Mapper
+    implementation "com.amazonaws:aws-android-sdk-core:2.13.5"
+    implementation "com.amazonaws:aws-android-sdk-s3:2.13.5"
+    implementation "com.amazonaws:aws-android-sdk-ddb:2.13.5"
+    implementation "com.amazonaws:aws-android-sdk-ddb-mapper:2.13.5"
+
+    // Picasso for image loading
+    implementation "com.squareup.picasso:picasso:2.71828"
+
+    // Facebook Core SDK - App Events
+    // implementation "com.facebook.android:facebook-core:$versions.facebookCoreSdk"
+
+    // VdoCipher to play videos
+    implementation "com.vdocipher.aegis:vdocipher-android:1.0.0-beta6"
+
+    // PhotoView
+    implementation "com.commit451:PhotoView:1.2.5"
+
+    // Country picker and other utils
+    implementation "com.hbb20:gthumb:1.4"
+    implementation "com.hbb20:ccp:2.2.9"
+
+    // RecyclerView animator
+    implementation "jp.wasabeef:recyclerview-animators:2.0.0"
+
+    // CircleIndicator
+    implementation "me.relex:circleindicator:1.2.2"
+
+    // PayTM
+    implementation("com.paytm:pgplussdk:1.2.3") {
+        transitive = true
+    }
+
+    // RazorPay
+    implementation "com.razorpay:checkout:1.5.5"
 }

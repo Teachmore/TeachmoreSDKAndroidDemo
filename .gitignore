@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+
+# TM_NOTE: This is a 3rd party SDK required to run Teachmore SDK v0.0.1
+# It won't be required here in the v1.0.0
+teachmoreandroidsdk-release/build

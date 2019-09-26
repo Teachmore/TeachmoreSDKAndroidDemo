@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        style="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,14 +20,23 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/activity_home" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <Button
+        android:id="@+id/button_launch_teachmore_sdk_full_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="Launch Teachmore Sdk Full Activity" />
+    <Button
+        android:id="@+id/button_launch_teachmore_sdk_bottom_nav_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="290dp"
+        android:gravity="center"
+        android:text="Launch Teachmore Sdk Bottom Navigation Activity" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
